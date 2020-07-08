@@ -9,15 +9,13 @@ namespace primeira_aula
             var myText = "meu texto";
             var myNumber = 8;
             var myPrice = 4.099;
-            var myBoolean = myPrice == myNumber;
+            var myBoolean = myPrice < 4;
 
-            Console.WriteLine("Você é amior de idade?");
+            Console.WriteLine("Você é maior de idade?");
             var result = Console.ReadLine();
 
-            myBoolean = result == "sim";
+            myBoolean = "sim" != result;
 
-            Console.WriteLine(myText);
-            Console.WriteLine(myBoolean);
             Console.WriteLine(myBoolean);
         }
     }
