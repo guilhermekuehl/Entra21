@@ -1,22 +1,21 @@
 ﻿using System;
 
 namespace primeira_aula
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var myText = "meu texto";
-            var myNumber = 8;
-            var myPrice = 4.099;
-            var myBoolean = myPrice < 4;
+	{
+		class Program
+			{
+				static void Main(string[] args)
+				{
+					Console.WriteLine("Quantos anos você tem? ");
+					var result = Console.ReadLine();
 
-            Console.WriteLine("Você é maior de idade?");
-            var result = Console.ReadLine();
+					var userAge = Int32.Parse(result);
 
-            myBoolean = "sim" != result;
-
-            Console.WriteLine(myBoolean);
-        }
-    }
-}
+					if (userAge > 15 && userAge < 51) {
+						Console.WriteLine("Sim, você tem idade para o Entra21");
+					}else{
+						Console.WriteLine("Não, você não tem idade para o Entra21");
+						}
+				}
+			}
+	}
