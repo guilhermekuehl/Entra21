@@ -11,6 +11,8 @@ namespace primeira_aula
 
 					var userAge = Int32.Parse(result);
 
+					
+
 					if (userAge > 15 && userAge < 51) {
 						Console.WriteLine("Sim, você tem idade para o Entra21");
 					}
