@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\guilherme\\primeira-aula\\primeira-aula.csproj": {}
+    "C:\\primeira-aula\\primeira-aula.csproj": {}
   },
   "projects": {
-    "C:\\guilherme\\primeira-aula\\primeira-aula.csproj": {
+    "C:\\primeira-aula\\primeira-aula.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\guilherme\\primeira-aula\\primeira-aula.csproj",
+        "projectUniqueName": "C:\\primeira-aula\\primeira-aula.csproj",
         "projectName": "primeira-aula",
-        "projectPath": "C:\\guilherme\\primeira-aula\\primeira-aula.csproj",
+        "projectPath": "C:\\primeira-aula\\primeira-aula.csproj",
         "packagesPath": "C:\\Users\\entra21\\.nuget\\packages\\",
-        "outputPath": "C:\\guilherme\\primeira-aula\\obj\\",
+        "outputPath": "C:\\primeira-aula\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

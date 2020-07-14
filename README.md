@@ -80,7 +80,11 @@ Indented code
     // Resto
     3 % 2;
     // vai retornar 1
-    ### Comandos do editor
+    // Incrementando uma variável
+    var counter = 0;
+    var counter++
+    // counter terá valor 1
+### Comandos do editor
 Selecionando o texto:
 Segurar a tela SHIFT e utilizar as SETAS
 
