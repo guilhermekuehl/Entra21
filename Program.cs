@@ -67,20 +67,24 @@ namespace primeira_aula
 				// - - - - - - - - - -
 
 					// 5:
-				var idade = new int[5];
-				for(int cont = 0; cont < 5; cont++){
-					System.Console.WriteLine("Digite sua idade: ");
-					var result = Console.ReadLine();
-					idade[cont] = Int32.Parse(result);
-				}
-				var counter = 0;
-				for (int i = 0; i < 5; i++){
-					if (idade[i] <= 35 && idade[i] >= 18){
-						counter++;
-					}
+				// var idade = new int[5];
+				// for(int cont = 0; cont < 5; cont++){
+				// 	System.Console.WriteLine("Digite sua idade: ");
+				// 	var result = Console.ReadLine();
+				// 	idade[cont] = Int32.Parse(result);
+				// }
+				// var counter = 0;
+				// for (int i = 0; i < 5; i++){
+				// 	if (idade[i] <= 35 && idade[i] >= 18){
+				// 		counter++;
+				// 	}
 					
-				}
-				System.Console.WriteLine($"{counter * 20}% das mulheres estão na faixa entre 18 e 35 anos");
+				// }
+				// System.Console.WriteLine($"{counter * 20}% das mulheres estão na faixa entre 18 e 35 anos");
+
+				// --------------------------
+
+				// 6:
 				}
 			}
 	}
