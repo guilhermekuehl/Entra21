@@ -70,7 +70,7 @@ namespace primeira_aula
 				// var idade = new int[5];
 				// for(int cont = 0; cont < 5; cont++){
 				// 	System.Console.WriteLine("Digite sua idade: ");
-				// 	var result = Console.ReadLine();
+				//	var result = Console.ReadLine();
 				// 	idade[cont] = Int32.Parse(result);
 				// }
 				// var counter = 0;
@@ -84,7 +84,76 @@ namespace primeira_aula
 
 				// --------------------------
 
-				// 6:
+					// 6:
+				string senha;
+				string senha2;
+				
+				string name1;
+				string name2;
+				
+				Console.WriteLine("Insira senha para você poder se cadastrar: ");
+				senha = Console.ReadLine();
+				if (senha == "Pa$$w0rd"){
+					Console.WriteLine("Informe seu nome: ");
+					name1 = Console.ReadLine();	
 				}
+				else{
+					Console.WriteLine("SENHA INCORRETA, O PROGRAMA SERÁ REINICIADO");
+				}
+
+				Console.WriteLine("Insira senha para você poder se cadastrar: ");
+				senha2 = Console.ReadLine();
+				if (senha2 == "Pa$$w0rd"){
+					Console.WriteLine("Informe seu nome: ");
+					name2 = Console.ReadLine();	
+				}
+				else {
+					Console.WriteLine("SENHA INCORRETA, O PROGRAMA SERÁ REINICIADO");
 			}
+				for(int vote = 0; vote == 1; vote++){
+					Console.WriteLine("Digite seu voto: ");
+					var vote = Console.ReadLine();
+					if (vote == 1){
+						vote++;
+						vote = Int32.Parse(name1);
+					}
+					else if (vote == 2){
+						vote++;
+						vote = Int32.Parse(name2);
+					if(vote != 1 && 2){
+						break;
+					}
+				}
+				
+				}
+			if (name1 > name2){
+					Console.WriteLine("Bolsonaro teve: "+ name1);
+				}
+
+				else if (name2 > name1){
+					Console.WriteLine("Haddad teve: "+ name2);
+				}
+
+				else{
+					Console.WriteLine("Votação segundo turno (digite seu candidato): ");
+					var vote = Console.ReadLine();
+					if (vote == 1){
+						vote++;
+						vote = Int32.Parse(name1);
+				}
+					else if(vote == 2){
+						vote++;
+						vote = Int32.Parse(name2);
+					}
+					if (name1 > name2){
+						Console.WriteLine("Bolsonaro teve: "+ name1);
+					}
+					else{
+						Console.WriteLine("Haddad teve: "+ name2);
+					}
+
+					}
+
+			}
+		}
 	}
