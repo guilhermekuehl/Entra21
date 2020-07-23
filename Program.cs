@@ -109,22 +109,24 @@ namespace primeira_aula
 					Console.WriteLine("SENHA INCORRETA, PRÓXIMO MODO");
 			}
 				Console.WriteLine("-----------VOTAÇÃO-----------");
-				Console.WriteLine("Digite '1' para o primeiro candidato e '2' para o segundo: ");
-				var r = Console.ReadLine();
 				while (true){
-				if(r == "1"){
-					var result1 = Int32.Parse(r);
-					result1++;
-					if (r == "0"){
-						continue;
+					Console.WriteLine("Digite '1' para o primeiro candidato e '2' para o segundo: ");
+					var r1 = Convert.ToInt32(Console.ReadLine());
+						if(r1 == 1){
+							r1++;
+							if (r1 == 0){
+								continue;
+						}
+						else if (r1 == 2){
+							var r2 = r1;
+							r2++;
+							if (r2 == 0){
+								continue;
+							}
+						}
 					}
-				}
-				else if (r == "2"){
-					var result2 = Int32.Parse(r);
-					result2++;
-				}
-				}
-				
+			System.Console.WriteLine(r1);
 			}
 		}
 	}
+}
