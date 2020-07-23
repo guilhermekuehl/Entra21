@@ -86,10 +86,9 @@ namespace primeira_aula
 
 					// 6:
 				string senha;
-				string senha2;
-				
 				string name1;
 				string name2;
+				var r1 = "";
 				
 				Console.WriteLine("Insira senha para você poder se cadastrar: ");
 				senha = Console.ReadLine();
@@ -98,62 +97,27 @@ namespace primeira_aula
 					name1 = Console.ReadLine();	
 				}
 				else{
-					Console.WriteLine("SENHA INCORRETA, O PROGRAMA SERÁ REINICIADO");
+					Console.WriteLine("SENHA INCORRETA, próximo candidato");
 				}
 
 				Console.WriteLine("Insira senha para você poder se cadastrar: ");
-				senha2 = Console.ReadLine();
-				if (senha2 == "Pa$$w0rd"){
+				senha = Console.ReadLine();
+				if (senha == "Pa$$w0rd"){
 					Console.WriteLine("Informe seu nome: ");
 					name2 = Console.ReadLine();	
 				}
 				else {
-					Console.WriteLine("SENHA INCORRETA, O PROGRAMA SERÁ REINICIADO");
+					Console.WriteLine("SENHA INCORRETA, PRÓXIMO MODO");
 			}
-				for(int vote = 0; vote == 1; vote++){
-					Console.WriteLine("Digite seu voto: ");
-					var vote = Console.ReadLine();
-					if (vote == 1){
-						vote++;
-						vote = Int32.Parse(name1);
-					}
-					else if (vote == 2){
-						vote++;
-						vote = Int32.Parse(name2);
-					if(vote != 1 && 2){
-						break;
-					}
+				Console.WriteLine("-----------VOTAÇÃO-----------");
+				Console.WriteLine("Digite '1' para o primeiro candidato e '2' para o segundo: ");
+				r1 = Console.ReadLine();
+				if(r1 == "1"){
+					r1 = Int32.Parse(result1);
+					result1++;
+					Console.WriteLine(result1);
 				}
 				
-				}
-			if (name1 > name2){
-					Console.WriteLine("Bolsonaro teve: "+ name1);
-				}
-
-				else if (name2 > name1){
-					Console.WriteLine("Haddad teve: "+ name2);
-				}
-
-				else{
-					Console.WriteLine("Votação segundo turno (digite seu candidato): ");
-					var vote = Console.ReadLine();
-					if (vote == 1){
-						vote++;
-						vote = Int32.Parse(name1);
-				}
-					else if(vote == 2){
-						vote++;
-						vote = Int32.Parse(name2);
-					}
-					if (name1 > name2){
-						Console.WriteLine("Bolsonaro teve: "+ name1);
-					}
-					else{
-						Console.WriteLine("Haddad teve: "+ name2);
-					}
-
-					}
-
 			}
 		}
 	}
