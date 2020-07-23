@@ -88,7 +88,6 @@ namespace primeira_aula
 				string senha;
 				string name1;
 				string name2;
-				var r1 = "";
 				
 				Console.WriteLine("Insira senha para você poder se cadastrar: ");
 				senha = Console.ReadLine();
@@ -111,11 +110,11 @@ namespace primeira_aula
 			}
 				Console.WriteLine("-----------VOTAÇÃO-----------");
 				Console.WriteLine("Digite '1' para o primeiro candidato e '2' para o segundo: ");
-				r1 = Console.ReadLine();
+				var r1 = Console.ReadLine();
 				if(r1 == "1"){
-					r1 = Int32.Parse(result1);
+					var result1 = Int32.Parse(r1);
 					result1++;
-					Console.WriteLine(result1);
+					Console.WriteLine(r1);
 				}
 				
 			}
