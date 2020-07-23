@@ -110,11 +110,19 @@ namespace primeira_aula
 			}
 				Console.WriteLine("-----------VOTAÇÃO-----------");
 				Console.WriteLine("Digite '1' para o primeiro candidato e '2' para o segundo: ");
-				var r1 = Console.ReadLine();
-				if(r1 == "1"){
-					var result1 = Int32.Parse(r1);
+				var r = Console.ReadLine();
+				while (true){
+				if(r == "1"){
+					var result1 = Int32.Parse(r);
 					result1++;
-					Console.WriteLine(r1);
+					if (r == "0"){
+						continue;
+					}
+				}
+				else if (r == "2"){
+					var result2 = Int32.Parse(r);
+					result2++;
+				}
 				}
 				
 			}
