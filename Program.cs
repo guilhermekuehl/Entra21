@@ -88,7 +88,11 @@ namespace primeira_aula
 				string senha;
 				string name1;
 				string name2;
-				
+
+				Console.WriteLine("Qual modo você quer? ");
+				var menu = Console.ReadLine();
+
+				if (menu == "1"){
 				Console.WriteLine("Insira senha para você poder se cadastrar: ");
 				senha = Console.ReadLine();
 				if (senha == "Pa$$w0rd"){
@@ -103,30 +107,53 @@ namespace primeira_aula
 				senha = Console.ReadLine();
 				if (senha == "Pa$$w0rd"){
 					Console.WriteLine("Informe seu nome: ");
-					name2 = Console.ReadLine();	
+					name2 = Console.ReadLine();
 				}
 				else {
 					Console.WriteLine("SENHA INCORRETA, PRÓXIMO MODO");
 			}
-				Console.WriteLine("-----------VOTAÇÃO-----------");
-				while (true){
-					Console.WriteLine("Digite '1' para o primeiro candidato e '2' para o segundo: ");
-					var r1 = Convert.ToInt32(Console.ReadLine());
-						if(r1 == 1){
-							r1++;
-							if (r1 == 0){
-								continue;
+				}
+				if (menu == "2"){
+					while(true){
+						System.Console.WriteLine("Qual candidato você quer votar? ");
+						var vote = Console.ReadLine();
+						int vote1 = 0;
+						int vote2 = 0;
+						if (vote == "1"){
+            	vote1++;
 						}
-						else if (r1 == 2){
-							var r2 = r1;
-							r2++;
-							if (r2 == 0){
-								continue;
+						else if (vote == "2"){
+							vote2++;
 						}
+						else{
+							continue;
+						}
+						if (vote1 > vote2){
+							System.Console.WriteLine("O candidato 1 ganhou, com o total de ",vote1, "votos");
+						}
+						else if (vote2 > vote1){
+							System.Console.WriteLine("O candidato 2 ganhou, com o total de ", vote2, "votos");
+						}
+						else{
+							System.Console.WriteLine("SEGUNDO TURNO");
+							if (vote == "1"){
+                vote1++;
+						}
+						else if (vote == "2"){
+							vote2++;
+						}
+						else{
+							continue;
+						}
+						if (vote1 > vote2){
+							System.Console.WriteLine("O candidato 1 ganhou, com o total de ", vote1, "votos");
 					}
+						else if (vote2 > vote1){
+							System.Console.WriteLine("O candidato 2 ganhou, com o total de ", vote2, "votos");
+						}
+						}
 				}
 			}
-			System.Console.WriteLine(r1);
 		}
 	}
 }
