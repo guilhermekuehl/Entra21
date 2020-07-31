@@ -4,8 +4,8 @@ namespace primeira_aula
 	{
 		class Program
 			{
-				static void Exercise1()
-		{
+			static void Exercise1(){
+			
 			var increment = 1;
 
 			System.Console.WriteLine("crescente");
@@ -188,79 +188,71 @@ namespace primeira_aula
 			else{
 				System.Console.WriteLine("X não é múltiplo de Y");
 		}
+		}
+		static void Exercise9(){
+			System.Console.WriteLine("Digite o primeiro número");
+			var n1 = Convert.ToDouble(Console.ReadLine());
+			System.Console.WriteLine("Digite o segundo número");
+			var n2 = Convert.ToDouble(Console.ReadLine());
+			System.Console.WriteLine("Digite o terceiro número");
+			var n3 = Convert.ToDouble(Console.ReadLine());
+			var soma = n2 + n3;
+			if (n1 > soma) {
+				System.Console.WriteLine("O primeiro número é maior que a soma dos outros 2");
+			}
+			else if (n1 == soma) {
+				System.Console.WriteLine("O primeiro número é igual a soma dos outros 2");
+			}
+			else{
+				System.Console.WriteLine("A soma dos últimos 2 números é maior que o primeiro");
+			}
+		}
+		static void Exercise10(){
+			System.Console.WriteLine("Digite o primeiro número");
+			var A = Convert.ToDouble(Console.ReadLine());
+			System.Console.WriteLine("Digite o segundo número");
+			var B = Convert.ToDouble(Console.ReadLine());
+			if (A > B){
+				System.Console.WriteLine("A > B");
+			}
+			else if (B > A){
+				System.Console.WriteLine("B > A");
+			}
+			else {
+				System.Console.WriteLine("A = B");
+			}
 
-			// System.Console.WriteLine("Digite o primeiro número");
-			// var n1 = Convert.ToDouble(Console.ReadLine());
-			// System.Console.WriteLine("Digite o segundo número");
-			// var n2 = Convert.ToDouble(Console.ReadLine());
-			// System.Console.WriteLine("Digite o terceiro número");
-			// var n3 = Convert.ToDouble(Console.ReadLine());
-			// var soma = n2 + n3;
-			// if (n1 > soma) {
-			// 	System.Console.WriteLine("O primeiro número é maior que a soma dos outros 2");
-			// }
-			// else if (n1 == soma) {
-			// 	System.Console.WriteLine("O primeiro número é igual a soma dos outros 2");
-			// }
-			// else{
-			// 	System.Console.WriteLine("A soma dos últimos 2 números é maior que o primeiro");
-			// }
+		}
+		static void Exercise11(){
+			System.Console.WriteLine("Digite o primeiro número");
+			var n1 = Convert.ToInt32(Console.ReadLine());
+			System.Console.WriteLine("Digite o segundo número");
+			var n2 = Convert.ToInt32(Console.ReadLine());
+			if (n2 != 0){
+				var result = n1 / n2;
+				System.Console.WriteLine(result);
+			}
+			else if(n2 == 0) {
+				System.Console.WriteLine("DIVISÃO POR ZERO");
+			}
+		}
+		static void Exercise12(){
+			System.Console.WriteLine("Digite o primeiro numero");
+			var n1 = Convert.ToInt32(Console.ReadLine());
+			System.Console.WriteLine("Digite o segundo numero");
+			var n2 = Convert.ToInt32(Console.ReadLine());
+			System.Console.WriteLine("Digite o terceiro numero");
+			var n3 = Convert.ToInt32(Console.ReadLine());
+			System.Console.WriteLine("Digite o quarto número");
+			var n4 = Convert.ToInt32(Console.ReadLine());
+			var result = n1 + n2 + n3 + n4;
+			System.Console.WriteLine("A soma dos quatro números são: ");
+			System.Console.WriteLine(result);
 
-			//---------------
+		}
 
-			// 10:
-
-			// System.Console.WriteLine("Digite o primeiro número");
-			// var A = Convert.ToDouble(Console.ReadLine());
-			// System.Console.WriteLine("Digite o segundo número");
-			// var B = Convert.ToDouble(Console.ReadLine());
-			// if (A > B){
-			// 	System.Console.WriteLine("A > B");
-			// }
-			// else if (B > A){
-			// 	System.Console.WriteLine("B > A");
-			// }
-			// else {
-			// 	System.Console.WriteLine("A = B");
-			// }
-
-			//-------------
-
-			//11:
-
-			// System.Console.WriteLine("Digite o primeiro número");
-			// var n1 = Convert.ToInt32(Console.ReadLine());
-			// System.Console.WriteLine("Digite o segundo número");
-			// var n2 = Convert.ToInt32(Console.ReadLine());
-			// if (n2 != 0){
-			// 	var result = n1 / n2;
-			// 	System.Console.WriteLine(result);
-			// }
-			// else if(n2 == 0) {
-			// 	System.Console.WriteLine("DIVISÃO POR ZERO");
-			// }
-
-
-			//--------------
-
-			// 12:
-			// System.Console.WriteLine("Digite o primeiro numero");
-			// var n1 = Convert.ToInt32(Console.ReadLine());
-			// System.Console.WriteLine("Digite o segundo numero");
-			// var n2 = Convert.ToInt32(Console.ReadLine());
-			// System.Console.WriteLine("Digite o terceiro numero");
-			// var n3 = Convert.ToInt32(Console.ReadLine());
-			// System.Console.WriteLine("Digite o quarto número");
-			// var n4 = Convert.ToInt32(Console.ReadLine());
-			// var result = n1 + n2 + n3 + n4;
-			// System.Console.WriteLine("A soma dos quatro números são: ");
-			// System.Console.WriteLine(result);
-
-			//------------------
-
-			//13:
-
-
+		static void Main(string[] args){
+			System.Console.WriteLine("");
 		}
 	}
 }
