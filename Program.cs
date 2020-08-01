@@ -251,8 +251,27 @@ namespace primeira_aula
 
 		}
 
-		static void Main(string[] args){
-			System.Console.WriteLine("");
+		static void Exercise13(string[] args){
+			var counter = 0;
+			var numMaior = 0;
+			while(counter < 10){
+				System.Console.WriteLine("Digite um número");
+				counter++;
+				var num = Convert.ToInt32(Console.ReadLine());
+				if(num > numMaior){
+					numMaior = num;
+				}			
+			}
+			System.Console.WriteLine($"O maior número é {numMaior}");
+		}
+			static void Main(string[] args){
+				double[] myArray = new double[3];
+				for(var i = 0; i < 3; i++){
+					System.Console.WriteLine("Digite um número:");
+					myArray[i] = Convert.ToDouble(Console.ReadLine());
+				}
+				Array.Sort(myArray);
+				System.Console.WriteLine($"{myArray[0]}, {myArray[1]} e {myArray[2]}");
 		}
 	}
 }
