@@ -9,32 +9,21 @@ namespace primeira_aula
 			var increment = 1;
 
 			System.Console.WriteLine("crescente");
-			while (increment < 11)
+			for (int counter = 0; counter < 11; counter++)
 			{
-				System.Console.WriteLine(increment);
-				increment++;
+				System.Console.WriteLine(counter);
 			}
-
-			var decrement = 10;
-
 			System.Console.WriteLine("decrescente");
-			while (decrement > 0)
+			for (int counter = 10; counter > 0; counter--)
 			{
-				System.Console.WriteLine(decrement);
-				decrement--;
+				System.Console.WriteLine(counter);
 			}
-
-			var counter = 2;
 			System.Console.WriteLine("apenas os pares");
-			while (counter < 11)
-			{
-				if (counter % 2 == 0)
-				{
-					System.Console.WriteLine(counter);
-				}
-				counter++;
+			for (int counter = 0; counter < 10; counter += 2){
+				System.Console.WriteLine(counter);
 			}
-		}
+		}	
+			
 
 		static void Exercise2()
 		{
@@ -264,7 +253,7 @@ namespace primeira_aula
 			}
 			System.Console.WriteLine($"O maior número é {numMaior}");
 		}
-			static void Main(string[] args){
+			static void Exercise14(string[] args){
 				double[] myArray = new double[3];
 				for(var i = 0; i < 3; i++){
 					System.Console.WriteLine("Digite um número:");
@@ -272,6 +261,9 @@ namespace primeira_aula
 				}
 				Array.Sort(myArray);
 				System.Console.WriteLine($"{myArray[0]}, {myArray[1]} e {myArray[2]}");
+		}
+		static void Main(string[] args){
+			
 		}
 	}
 }
