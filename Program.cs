@@ -4,37 +4,38 @@ namespace primeira_aula
 	{
 		class Program
 			{
-			static void Exercise1(){
-			
-			var increment = 1;
+			static void Exercise1()
+		{
+			Console.WriteLine("crescente");
+            
+            for (int counter = 1; counter < 11; counter++)
+            {
+				Console.WriteLine(counter);
+            }
 
-			System.Console.WriteLine("crescente");
-			for (int counter = 0; counter < 11; counter++)
-			{
-				System.Console.WriteLine(counter);
-			}
 			System.Console.WriteLine("decrescente");
-			for (int counter = 10; counter > 0; counter--)
-			{
-				System.Console.WriteLine(counter);
-			}
+
+            for (int counter = 10; counter > 0; counter--)
+            {
+				System.Console.WriteLine(counter);   
+            }
+
 			System.Console.WriteLine("apenas os pares");
-			for (int counter = 0; counter < 10; counter += 2){
-				System.Console.WriteLine(counter);
-			}
-		}	
-			
+
+            for (int counter = 2; counter < 11; counter += 2)
+            {
+                System.Console.WriteLine(counter);
+            }
+		}
 
 		static void Exercise2()
 		{
-			var counter = 1;
 			var sum = 0;
 
-			while (counter < 101)
-			{
+            for (int counter = 1; counter < 101; counter++)
+            {
 				sum += counter;
-				counter++;
-			}
+            }
 
 			System.Console.WriteLine("a soma dos números inteiros entre 1 e 100 é");
 			System.Console.WriteLine(sum);
@@ -42,228 +43,250 @@ namespace primeira_aula
 
 		static void Exercise3()
 		{
-			var counter = 1;
-
-			while (counter < 200)
-			{
-				if (counter % 2 == 1)
-				{
-					System.Console.WriteLine(counter);
-				}
-				counter++;
-			}
+            for (int counter = 1; counter < 200; counter += 2)
+            {
+				System.Console.WriteLine(counter);
+            }
 		}
 
 		static void Exercise4()
 		{
 			var sum = 0.0;
-			var counter = 0.0;
 
-			while (true)
-			{
-				System.Console.WriteLine("Digite uma idade");
+            for (int counter = 0; true; counter++)
+            {
+                System.Console.WriteLine("Digite uma idade");
 				var result = Console.ReadLine();
 
 				if (result == "0")
 				{
+                    var average = (sum / counter).ToString("0.00");
+			        System.Console.WriteLine($"A média da turma é: {average}");
 					break;
 				}
 				
-				counter++;
-				
 				sum += Int32.Parse(result);
-			}
-
-			System.Console.WriteLine("A média da turma é:");
-			System.Console.WriteLine((sum / counter).ToString("0.00"));
+            }
 		}
 
 		static void Exercise5()
 		{
 			var womenBetween18And35 = 0;
 
-			var counter = 0;
-			while (counter < 5)
-			{
-				System.Console.WriteLine("Digite o nome de uma mulher");
+            for (int counter = 0; counter < 5; counter++)
+            {
+				System.Console.WriteLine("Qual é o seu nome?");
 				Console.ReadLine();
-				System.Console.WriteLine("Digite sua idade");
+
+				System.Console.WriteLine("Qual é a sua idade?");
 				var age = Int32.Parse(Console.ReadLine());
 
 				if (age > 17 && age < 36)
 				{
 					womenBetween18And35++;
 				}
-				counter++;
-			}
+            }
 
-			System.Console.WriteLine("A porcentagem de mulheres entre 18 e 35");
-			System.Console.WriteLine(womenBetween18And35 * 100 / 5);
+			System.Console.WriteLine("Porcentagem de mulheres que tem entre 18 e 35 anos");
+
+			var percentage = (womenBetween18And35 * 100) / 5;
+			System.Console.WriteLine($"{percentage}%");
 		}
 
 		static void Exercise6()
 		{
-			var candidates = new (string name, int votes)[2];
+			const string registerMode = "1";
+			const string votesMode = "2";
+			const string resultMode = "3";
 
+			var candidates = new (string name, int votes)[2];
+			
 			while (true)
 			{
-				System.Console.WriteLine("Selecione um dos modos a seguir:");
-				System.Console.WriteLine("1 - Cadastro dos candidatos");
-        		System.Console.WriteLine("2 - Vote em um candidato");
-        		System.Console.WriteLine("3 - Apuração dos votos");
+				System.Console.WriteLine("Selecione um dos modos a baixo:");
+				System.Console.WriteLine($"{registerMode}) Cadastro de candidatos");
+				System.Console.WriteLine($"{votesMode}) Votar");
+				System.Console.WriteLine($"{resultMode}) Apuração dos votos");
 				var mode = Console.ReadLine();
 
-				if (mode == "1")
+				if (mode == resultMode)
+				{
+					break;
+				}
+
+				if (mode == registerMode)
 				{
 					var password = "";
-
 					while (password != "Pa$$w0rd")
 					{
 						System.Console.WriteLine("Digite a senha");
 						password = Console.ReadLine();
 					}
 
-					System.Console.WriteLine("Digite o nome do primeiro candidato");
-					candidates[0].name = Console.ReadLine();
-
-					System.Console.WriteLine("Digite o nome do segundo candidato");
-					candidates[1].name = Console.ReadLine();
+                    for (int i = 0; i < candidates.Length; i++)
+                    {                   
+                        System.Console.WriteLine($"Digite o nome do candidato nº{i + 1}");
+                        candidates[i].name = Console.ReadLine();
+                    }
 				}
 
-				if (mode == "2")
+				if (mode == votesMode)
 				{
-					System.Console.WriteLine($"Insira 1 para votar no candidato {candidates[0].name}, ou 2 para votar no candidato {candidates[1].name}");
-					var result = Int32.Parse(Console.ReadLine());
-					candidates[result - 1].votes++;
-				}
-
-        		if (mode == "3")
-				{
-					if (candidates[0].votes == candidates[1].votes)
-					{
-						System.Console.WriteLine("Segundo turno!");
-					}
-					else
-					{
-						var winner = (candidates[0].votes > candidates[1].votes) ? candidates[0] : candidates[1];
-						System.Console.WriteLine($"O vencedor é: {winner.name}");
-						System.Console.WriteLine($"Com o total de: {winner.votes} votos!");
-					}
-					break;
+					System.Console.WriteLine($"Vote 1 para o candidato: {candidates[0].name} ou 2 para o candidato: {candidates[1].name}");
+					
+					var vote = Int32.Parse(Console.ReadLine());
+					candidates[vote - 1].votes++;
 				}
 			}
+
+			if (candidates[0].votes == candidates[1].votes)
+			{
+				System.Console.WriteLine("Segundo turno!");
+			}
+			else
+			{
+				var winner = candidates[0];
+                for (int i = 1; i < candidates.Length; i++)
+                {
+                    var currentCandidate = candidates[i];
+                    if (currentCandidate.votes > winner.votes)
+                    {
+                        winner = currentCandidate;
+                    }
+                }
+
+				System.Console.WriteLine($"O vencedor é: {winner.name}");
+				System.Console.WriteLine($"Com o total de: {winner.votes} votos!");
+			}
 		}
 
-		static void Exercise7(){
-			System.Console.WriteLine("Há quantos anos você fuma?");
-			var anos = Convert.ToInt32(Console.ReadLine());
-			System.Console.WriteLine("Quantos cigarros você fuma por dia?");
-			var nCigarros = Convert.ToInt32(Console.ReadLine());
-			System.Console.WriteLine("Qual o preço de uma carteira?");
-			var preco = Convert.ToDouble(Console.ReadLine());
-			var cigarroPreco = preco / 20;
-			var tempo = anos * 365;
-			var result = cigarroPreco * tempo;
-			System.Console.WriteLine(result);
-		}
-		static void Exercise8(){
-			System.Console.WriteLine("Digite o primeiro número");
-			var x = Convert.ToInt32(Console.ReadLine());
-			System.Console.WriteLine("Digite o segundo número");
-			var y = Convert.ToInt32(Console.ReadLine());
-			if ((x & y) == 0) {
-				System.Console.WriteLine("X é múltiplo de Y");
-			}
-			else{
-				System.Console.WriteLine("X não é múltiplo de Y");
-		}
-		}
-		static void Exercise9(){
-			System.Console.WriteLine("Digite o primeiro número");
-			var n1 = Convert.ToDouble(Console.ReadLine());
-			System.Console.WriteLine("Digite o segundo número");
-			var n2 = Convert.ToDouble(Console.ReadLine());
-			System.Console.WriteLine("Digite o terceiro número");
-			var n3 = Convert.ToDouble(Console.ReadLine());
-			var soma = n2 + n3;
-			if (n1 > soma) {
-				System.Console.WriteLine("O primeiro número é maior que a soma dos outros 2");
-			}
-			else if (n1 == soma) {
-				System.Console.WriteLine("O primeiro número é igual a soma dos outros 2");
-			}
-			else{
-				System.Console.WriteLine("A soma dos últimos 2 números é maior que o primeiro");
-			}
-		}
-		static void Exercise10(){
-			System.Console.WriteLine("Digite o primeiro número");
-			var A = Convert.ToDouble(Console.ReadLine());
-			System.Console.WriteLine("Digite o segundo número");
-			var B = Convert.ToDouble(Console.ReadLine());
-			if (A > B){
-				System.Console.WriteLine("A > B");
-			}
-			else if (B > A){
-				System.Console.WriteLine("B > A");
-			}
-			else {
-				System.Console.WriteLine("A = B");
-			}
+		static void Exercise9()
+		{
+            Console.WriteLine("Forneça um número");
+            var firstNumber = Double.Parse(Console.ReadLine());
 
-		}
-		static void Exercise11(){
-			System.Console.WriteLine("Digite o primeiro número");
-			var n1 = Convert.ToInt32(Console.ReadLine());
-			System.Console.WriteLine("Digite o segundo número");
-			var n2 = Convert.ToInt32(Console.ReadLine());
-			if (n2 != 0){
-				var result = n1 / n2;
-				System.Console.WriteLine(result);
-			}
-			else if(n2 == 0) {
-				System.Console.WriteLine("DIVISÃO POR ZERO");
-			}
-		}
-		static void Exercise12(){
-			System.Console.WriteLine("Digite o primeiro numero");
-			var n1 = Convert.ToInt32(Console.ReadLine());
-			System.Console.WriteLine("Digite o segundo numero");
-			var n2 = Convert.ToInt32(Console.ReadLine());
-			System.Console.WriteLine("Digite o terceiro numero");
-			var n3 = Convert.ToInt32(Console.ReadLine());
-			System.Console.WriteLine("Digite o quarto número");
-			var n4 = Convert.ToInt32(Console.ReadLine());
-			var result = n1 + n2 + n3 + n4;
-			System.Console.WriteLine("A soma dos quatro números são: ");
-			System.Console.WriteLine(result);
+            Console.WriteLine("Forneça um número");
+            var secondNumber = Double.Parse(Console.ReadLine());
 
+            Console.WriteLine("Forneça um número");
+            var thirdNumber = Double.Parse(Console.ReadLine());
+
+            if (firstNumber > (secondNumber + thirdNumber))
+            {
+                Console.WriteLine("O primeiro número é maior que a soma dos demais");
+            }
+            else
+            {
+                Console.WriteLine("O primeiro número NAO é maior que a soma dos demais");
+            }
 		}
 
-		static void Exercise13(string[] args){
-			var counter = 0;
-			var numMaior = 0;
-			while(counter < 10){
-				System.Console.WriteLine("Digite um número");
-				counter++;
-				var num = Convert.ToInt32(Console.ReadLine());
-				if(num > numMaior){
-					numMaior = num;
-				}			
-			}
-			System.Console.WriteLine($"O maior número é {numMaior}");
+		static void Exercise11()
+		{
+            var firstNumber = 0;
+            Console.WriteLine("Forneça um número");
+            var firstInput = Console.ReadLine();
+            
+            var secondNumber = 0;
+            Console.WriteLine("Forneça um número");
+            var secondInput = Console.ReadLine();
+            
+            try
+            {
+                firstNumber = Int32.Parse(firstInput);
+                secondNumber = Int32.Parse(secondInput);
+            }
+            catch (System.Exception)
+            {
+                System.Console.WriteLine("Um dos números está em formato inválido");
+                System.Console.WriteLine("Tente novamente com outros números");
+            }
+
+            if (secondNumber != 0)
+            {
+                System.Console.WriteLine(firstNumber / secondNumber);
+            }
+            else
+            {
+                System.Console.WriteLine("DIVISÃO POR ZERO");
+            }
 		}
-			static void Exercise14(string[] args){
-				double[] myArray = new double[3];
-				for(var i = 0; i < 3; i++){
-					System.Console.WriteLine("Digite um número:");
-					myArray[i] = Convert.ToDouble(Console.ReadLine());
-				}
-				Array.Sort(myArray);
-				System.Console.WriteLine($"{myArray[0]}, {myArray[1]} e {myArray[2]}");
+
+		static void Exercise13()
+		{
+            var biggestNumber = 0;
+
+            for (int counter = 0; counter < 10; counter++)
+            {
+                System.Console.WriteLine("Forneça um número");
+                var input = Int32.Parse(Console.ReadLine());
+
+                if (input > biggestNumber)
+                {
+                    biggestNumber = input;
+                }
+            }
+
+            System.Console.WriteLine("O maior número é:");
+            System.Console.WriteLine(biggestNumber);
 		}
-		static void Main(string[] args){
-			
+
+		static void Exercise14()
+		{
+            var smaller = 0.0;
+            var middle = 0.0;
+            var greater = 0.0;
+
+            for (int i = 0; i < 3; i++)
+            {
+                System.Console.WriteLine("Forneça um número");
+                var input = Double.Parse(Console.ReadLine());
+
+                if (input > greater)
+                {
+                    smaller = middle;
+                    middle = greater;
+                    greater = input;
+                }
+                else if (input > middle)
+                {
+                    smaller = middle;
+                    middle = input;
+                }
+                else
+                {
+                    smaller = input;
+                }
+            }
+
+            System.Console.WriteLine(smaller);
+            System.Console.WriteLine(middle);
+            System.Console.WriteLine(greater);
+		}
+
+		static void Exercise17()
+		{
+            while (true)
+            {
+                Console.WriteLine("Forneça um número");
+                var input = Int32.Parse(Console.ReadLine());
+
+                if (input == -1)
+                {
+                    break;
+                }
+
+                Console.WriteLine("Tabuada:");
+                for (var i = 1; i < 11; i++)
+                {
+                    Console.WriteLine(input * i);
+                }
+            }
+		}
+
+		static void Main(string[] args)
+		{
+            Exercise14();
 		}
 	}
 }
