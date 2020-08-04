@@ -284,9 +284,27 @@ namespace primeira_aula
             }
 		}
 
-		static void Main(string[] args)
+		static void Exercise18()
 		{
-            Exercise14();
+            var total = 12;
+            System.Console.WriteLine("Quantas maçãs deseja comprar?");
+            var quantity = Int32.Parse(Console.ReadLine());
+            if (quantity < total)
+            {
+                var unitPrice = 1.30;
+                var price = quantity * unitPrice;
+                System.Console.WriteLine($"R$ {price.ToString("0.00")}");
+            }
+            if (quantity >= total)
+            {
+                var unitPrice = 1.00;
+                var price = quantity * unitPrice;
+                System.Console.WriteLine($"R$ {price.ToString("0.00")}");
+            }
 		}
+        static void Main(string[] args)
+        {
+
+        }
 	}
 }
