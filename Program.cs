@@ -302,9 +302,5 @@ namespace primeira_aula
                 System.Console.WriteLine($"R$ {price.ToString("0.00")}");
             }
 		}
-        static void Main(string[] args)
-        {
-
-        }
 	}
 }

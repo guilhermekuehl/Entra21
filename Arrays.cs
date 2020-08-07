@@ -90,6 +90,15 @@ namespace primeira_aula
             }
 		}
 
+		static void Exercise4()
+		{
+            var arraysLength = 3;
+            var a = new double[arraysLength];
+            var b = new double[arraysLength];
+            
+		}
+
+
 		static void Main(string[] args)
 		{
             Exercise2();
