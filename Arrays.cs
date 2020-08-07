@@ -4,7 +4,7 @@ namespace primeira_aula
 	{
 		class Arrays
 			{
-            static void Exercise1(string[] args)
+            static void Exercise1()
             {
                const int arraysLenght = 15;
             
@@ -92,16 +92,24 @@ namespace primeira_aula
 
 		static void Exercise4()
 		{
-            var arraysLength = 3;
+            var arraysLength = 10;
             var a = new double[arraysLength];
             var b = new double[arraysLength];
-            
+            for (int i = 0; i < arraysLength; i++)
+            {
+                System.Console.WriteLine("Array 'a': ");
+                a[i] = double.Parse(Console.ReadLine());
+            }
+            for (int j = 0; j < arraysLength; j++)
+            {
+                System.Console.WriteLine(a[]);
+            }
 		}
 
 
 		static void Main(string[] args)
 		{
-            Exercise2();
+            Exercise4();
 		} 
     }
 }
