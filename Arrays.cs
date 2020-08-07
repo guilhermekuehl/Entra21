@@ -4,7 +4,7 @@ namespace primeira_aula
 	{
 		class Arrays
 			{
-            static void Exercise1()
+        static void Exercise1()
             {
                const int arraysLenght = 15;
             
@@ -92,24 +92,130 @@ namespace primeira_aula
 
 		static void Exercise4()
 		{
-            var arraysLength = 10;
-            var a = new double[arraysLength];
-            var b = new double[arraysLength];
-            for (int i = 0; i < arraysLength; i++)
+            const int arraysLenght = 3;
+            
+            var a = new double?[arraysLenght];
+            var b = new double[arraysLenght];
+
+            System.Console.WriteLine($"Digite os {arraysLenght} primeiros valores");
+
+            for (int i = 0; i < arraysLenght; i++)
             {
-                System.Console.WriteLine("Array 'a': ");
-                a[i] = double.Parse(Console.ReadLine());
+                System.Console.WriteLine("Digite um valor:");
+                a[i] = Double.Parse(Console.ReadLine());
             }
-            for (int j = 0; j < arraysLength; j++)
+
+            System.Console.WriteLine($"Digite os próximos {arraysLenght} valores");
+
+            var arraysAreEquals = true;
+
+            for (int i = 0; i < arraysLenght; i++)
             {
-                System.Console.WriteLine(a[]);
+                System.Console.WriteLine("Digite um valor:");
+                var result = Double.Parse(Console.ReadLine());
+                b[i] = result;
+
+                var hasEquals = false;
+
+                for (int j = 0; j < a.Length; j++)
+                {
+                    if(a[j] == result)
+                    {
+                        hasEquals = true;
+                        a[j] = null;
+                        break;
+                    }   
+                }
+
+                if (!hasEquals)
+                {
+                    arraysAreEquals = false;
+                }
             }
+
+            var message = arraysAreEquals ? "Os arrays são iguais" : "Os arrays são diferentes";
+            System.Console.WriteLine(message);
 		}
 
-
-		static void Main(string[] args)
+		static void Exercise5()
 		{
-            Exercise4();
+            const int arraysLength = 15;
+
+            var belowAverage = 0;
+            var aboveAverage = 0;
+            var onAverage = 0;
+
+            var soma = 0.0;
+            var average = 0.0;
+
+            var arrayOfNumbers = new double[arraysLength];
+            
+            System.Console.WriteLine("Digite os valores:");
+
+            for (int i = 0; i < arraysLength; i++)
+            {
+                arrayOfNumbers[i] = Double.Parse(Console.ReadLine());
+                soma += arrayOfNumbers[i];
+            }
+            average = soma / arraysLength;
+            System.Console.WriteLine($"Média: {average}");
+
+            foreach (var item in arrayOfNumbers)
+            {
+                if(item < soma)
+                {
+                    belowAverage++;
+                }
+                else if(item > soma)
+                {
+                    aboveAverage++;
+                }
+                else
+                {
+                    onAverage++;
+                }
+            }            
+                System.Console.WriteLine($"Abaixo: {belowAverage}, acima: {aboveAverage}, na média {onAverage}");
+            
+        }
+
+		static void Exercise6()
+		{
+            const int arraysLength = 12;
+
+            var a = new int[arraysLength];
+            var b = new int[arraysLength];
+            var c = new int[arraysLength];
+
+            System.Console.WriteLine("Digite os valores do array 'a': ");
+            for (int i = 0; i < arraysLength; i++)
+            {
+                a[i] = Int32.Parse(Console.ReadLine());
+            }
+
+            Array.Sort(a);
+            System.Console.WriteLine(string.Join(",", a));
+
+            System.Console.WriteLine("Digite os valore do array 'b': ");
+            for (int i = 0; i < arraysLength; i++)
+            {
+                b[i] = Int32.Parse(Console.ReadLine());
+            }
+            Array.Sort(b);
+            Array.Reverse(b);
+            System.Console.WriteLine(string.Join(",", b));
+
+            for (int i = 0; i < arraysLength; i++)
+            {
+                c[i] = a[i] + b[i];
+            }
+            Array.Sort(c);
+            System.Console.WriteLine(string.Join(",", c));
+        }
+            
+		static void off(string[] args)
+		{
+            Exercise6();
 		} 
     }
 }
