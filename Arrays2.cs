@@ -89,21 +89,69 @@ namespace primeira_aula
                     System.Console.WriteLine("Insira apenas números, tente novamente!");
                 }                
             }
-            foreach (var item in arrayOfNumbers)
+            var hasRepeat = false;
+            for (int i = 0; i < arrayLength; i++)
             {
-                if (item == item)
+                for (int j = 0; j < arrayLength; j++)
                 {
-                    System.Console.WriteLine("equals");
+                    if (arrayOfNumbers[i] == arrayOfNumbers[j] && i != j)
+                    {
+                        hasRepeat = true;
+                        break;
+                    }
+                }
+                if (hasRepeat)
+                {
+                    break;
+                }
+            }
+            System.Console.WriteLine(hasRepeat ? "Contém repetição" : "Não contém repetição");
+        }
+        
+        static void Exercise3()
+        {
+            const int arraysLength = 3;
+
+            var counterProjectYes = 0;
+            var counterProjectNo = 0;
+            var result = "";
+            var arraysOfSex = new char [arraysLength];
+
+            System.Console.WriteLine("Digite seu sexo: (m) (f)");
+            for (int i = 0; i < arraysLength; i++)
+            {
+                arraysOfSex[i] = char.Parse(Console.ReadLine());
+                if (arraysOfSex[i] != 'm' || arraysOfSex[i] != 'f')
+                {
+                    System.Console.WriteLine("Digite somente um dos dois caracteres 'm' ou 'f'");    
+                }
+                System.Console.WriteLine("Informe sua resposta: (sim) (nao)");
+                result = Console.ReadLine();
+                if (result != "sim" || result != "nao"){
+                    System.Console.WriteLine("Informe somente as palavras 'sim' ou 'nao'");
+                }
+                if (result == "sim")
+                {
+                    counterProjectYes++;
                 }
                 else
                 {
-                    System.Console.WriteLine("not equals");
+                    counterProjectNo++;
                 }
             }
+            if (counterProjectYes > counterProjectNo)
+            {
+                System.Console.WriteLine($"Maiores pessoas concordaram com o projeto: {counterProjectYes}");
+            }
+            if (counterProjectYes < counterProjectNo)
+            {
+                System.Console.WriteLine($"Maiores pessoas discordaram com o projeto: {counterProjectNo}");
+            }
         }
+        
         static void Main(string[] args)
         {
-            Exercise2();
+            Exercise3();
         }
     }
 }
