@@ -115,21 +115,19 @@ namespace primeira_aula
             var counterProjectYes = 0;
             var counterProjectNo = 0;
             var result = "";
-            var arraysOfSex = new char [arraysLength];
+            var arraysOfPerson = new char [arraysLength];
+            var counterWomen = 0;
+            var counterMen = 0;
+            var percentMenNo = 0.0;
+            var percentWomenYes = 0.0;
 
-            System.Console.WriteLine("Digite seu sexo: (m) (f)");
             for (int i = 0; i < arraysLength; i++)
             {
-                arraysOfSex[i] = char.Parse(Console.ReadLine());
-                if (arraysOfSex[i] != 'm' || arraysOfSex[i] != 'f')
-                {
-                    System.Console.WriteLine("Digite somente um dos dois caracteres 'm' ou 'f'");    
-                }
+                System.Console.WriteLine("Digite seu sexo: (m) (f)");
+                arraysOfPerson[i] = char.Parse(Console.ReadLine());
                 System.Console.WriteLine("Informe sua resposta: (sim) (nao)");
                 result = Console.ReadLine();
-                if (result != "sim" || result != "nao"){
-                    System.Console.WriteLine("Informe somente as palavras 'sim' ou 'nao'");
-                }
+                
                 if (result == "sim")
                 {
                     counterProjectYes++;
@@ -138,15 +136,21 @@ namespace primeira_aula
                 {
                     counterProjectNo++;
                 }
+                
+                if(arraysOfPerson[i] == 'm' && result == "nao")
+                {
+                    counterMen++;
+                }
+                else if (arraysOfPerson[i] == 'f' && result == "sim")
+                {
+                    counterWomen++;
+                }
             }
-            if (counterProjectYes > counterProjectNo)
-            {
-                System.Console.WriteLine($"Maiores pessoas concordaram com o projeto: {counterProjectYes}");
-            }
-            if (counterProjectYes < counterProjectNo)
-            {
-                System.Console.WriteLine($"Maiores pessoas discordaram com o projeto: {counterProjectNo}");
-            }
+                percentWomenYes = (counterWomen / arraysLength) * 100;
+                System.Console.WriteLine($"{percentWomenYes}% das mulheres concordaram com o projeto");
+                System.Console.WriteLine($"{counterMen}% dos homens discordaram com o projeto");
+                System.Console.WriteLine($"{counterProjectYes} pessoa(s) concordaram com o projeto");
+                System.Console.WriteLine($"{counterProjectNo} pessoa(s) discordaram com o projeto");
         }
         
         static void Main(string[] args)
