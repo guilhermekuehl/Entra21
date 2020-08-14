@@ -209,7 +209,7 @@ namespace primeira_aula
 
         static void Exercise6()
         {
-            const int arrayLength = 3;
+            const int arrayLength = 10;
 
             var arrayElements = new double[arrayLength];
             var bigger = 0.0;
@@ -233,9 +233,98 @@ namespace primeira_aula
             System.Console.WriteLine($"Maior: {bigger} na posição: {position}");
 
         }
+
+        static void Exercise7()
+
+        {
+            const int arrayLength = 3;
+
+            var a = new int[arrayLength];
+            var counter = 0;
+
+            System.Console.WriteLine("Insira os números: ");
+            for (int i = 0; i < arrayLength; i++)
+            {
+                while(true)
+                {
+                    try
+                    {
+                        a[i] = Int32.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (System.Exception)
+                    {
+                        System.Console.WriteLine("Digita um número inteiro");
+                    }
+                }
+                if (a[i] == i)
+                {
+                    counter++;
+                }
+            }
+            if (counter == 0)
+            {
+                System.Console.WriteLine("Nenhum dos números é igual a sua posição");
+            }
+            else
+            {
+                System.Console.WriteLine($"{counter} vez(es)");
+            }
+            
+        }
+
+        static void Exercise8()
+        {
+            const int arrayLength = 10;
+
+            var arrayOfLetters = new string[arrayLength];
+            var counterVogals = 0;
+
+            System.Console.WriteLine("Insira suas letras: ");
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                arrayOfLetters[i] = Console.ReadLine();
+                if (arrayOfLetters[i] == "a" || arrayOfLetters[i] == "e" || arrayOfLetters[i] == "i" || arrayOfLetters[i] == "o" || arrayOfLetters[i] == "u")
+                {
+                    counterVogals++;
+                }
+            }
+            if (counterVogals == 0)
+            {
+                System.Console.WriteLine("Nenhuma vogal foi inserida");
+            }
+            else
+            {
+                System.Console.WriteLine($"Foram informadas {counterVogals} vogais");
+            }
+            
+            
+        }
+   
+        static void Exercise9()
+        {
+            const int arrayLength = 10;
+
+            var arrayOfLettersInIndex = new string[arrayLength];
+            var arrayOfLetters = new string[arrayLength];
+
+            System.Console.WriteLine("Insira suas letras: ");
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                arrayOfLetters[i] = Console.ReadLine();
+                if (i %2 == 0)
+                {
+                    arrayOfLettersInIndex[i] = arrayOfLetters[i];
+                }
+            }
+            System.Console.WriteLine("Resultado: ");
+            System.Console.WriteLine(string.Join(",", arrayOfLettersInIndex));
+        }
         static void Main(string[] args)
         {
-            Exercise6();
+            Exercise9();
         }
     }
 }
