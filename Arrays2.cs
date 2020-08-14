@@ -110,16 +110,18 @@ namespace primeira_aula
         
         static void Exercise3()
         {
-            const int arraysLength = 3;
+            const int arraysLength = 10;
 
             var counterProjectYes = 0;
             var counterProjectNo = 0;
             var result = "";
             var arraysOfPerson = new char [arraysLength];
-            var counterWomen = 0;
-            var counterMen = 0;
+            var counterWomenYes = 0;
+            var counterMenNo = 0;
             var percentMenNo = 0.0;
             var percentWomenYes = 0.0;
+            var counterMen = 0;
+            var counterWomen = 0;
 
             for (int i = 0; i < arraysLength; i++)
             {
@@ -127,7 +129,16 @@ namespace primeira_aula
                 arraysOfPerson[i] = char.Parse(Console.ReadLine());
                 System.Console.WriteLine("Informe sua resposta: (sim) (nao)");
                 result = Console.ReadLine();
-                
+
+                if (arraysOfPerson[i] == 'm')
+                {
+                    counterMen++;
+                }
+                else if (arraysOfPerson[i] == 'f')
+                {
+                    counterWomen++;
+                }
+
                 if (result == "sim")
                 {
                     counterProjectYes++;
@@ -139,23 +150,92 @@ namespace primeira_aula
                 
                 if(arraysOfPerson[i] == 'm' && result == "nao")
                 {
-                    counterMen++;
+                    counterMenNo++;
                 }
                 else if (arraysOfPerson[i] == 'f' && result == "sim")
                 {
-                    counterWomen++;
+                    counterWomenYes++;
                 }
             }
-                percentWomenYes = (counterWomen / arraysLength) * 100;
-                System.Console.WriteLine($"{percentWomenYes}% das mulheres concordaram com o projeto");
-                System.Console.WriteLine($"{counterMen}% dos homens discordaram com o projeto");
-                System.Console.WriteLine($"{counterProjectYes} pessoa(s) concordaram com o projeto");
-                System.Console.WriteLine($"{counterProjectNo} pessoa(s) discordaram com o projeto");
+
+            percentWomenYes = counterWomenYes * (100 / counterWomen);
+            percentMenNo = counterMenNo * (100 / counterMen);
+
+            System.Console.WriteLine($"{percentWomenYes}% das mulheres concordaram com o projeto");
+            System.Console.WriteLine($"{percentMenNo}% dos homens discordaram com o projeto");
+            System.Console.WriteLine($"{counterProjectYes} pessoa(s) concordaram com o projeto");                
+            System.Console.WriteLine($"{counterProjectNo} pessoa(s) discordaram com o projeto");
         }
         
+        static void Exercise4()
+        {
+            const int arrayLength = 5;
+
+            var arrayElements = new double[arrayLength];
+            var soma = 0.0;
+
+            System.Console.WriteLine("Insira os valores: ");
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                arrayElements[i] = double.Parse(Console.ReadLine());
+                if(arrayElements[i] %2 != 0)
+                {
+                    soma += arrayElements[i];
+                }
+            }
+            System.Console.WriteLine($"Soma: {soma}");
+        }
+
+        static void Exercise5()
+        {
+            const int arrayLength = 10;
+
+            var arrayOfValue = new double[arrayLength];
+            var counter = 0;
+
+            System.Console.WriteLine("Insira os valores: ");
+
+            for (int i = 0; i < arrayLength; i++)
+            {
+                arrayOfValue[i] = double.Parse(Console.ReadLine());
+                if (arrayOfValue[i] > 0)
+                {
+                    counter++;
+                }
+            }
+            System.Console.WriteLine($"Há {counter} valor(es) positivos.");
+        }
+
+        static void Exercise6()
+        {
+            const int arrayLength = 3;
+
+            var arrayElements = new double[arrayLength];
+            var bigger = 0.0;
+            var position = 0;
+
+            System.Console.WriteLine("Insira os valores: ");
+            for (int i = 0; i < arrayLength; i++)
+            {
+                arrayElements[i] = double.Parse(Console.ReadLine());
+                if (arrayElements[i] < 0)
+                {
+                    arrayElements[i] = 0;
+                }
+
+                if (arrayElements[i] > bigger)
+                {
+                    bigger = arrayElements[i];
+                    position = i;
+                }
+            }
+            System.Console.WriteLine($"Maior: {bigger} na posição: {position}");
+
+        }
         static void Main(string[] args)
         {
-            Exercise3();
+            Exercise6();
         }
     }
 }
