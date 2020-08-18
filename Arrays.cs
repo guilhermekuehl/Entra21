@@ -1,12 +1,12 @@
 using System;
 
 namespace primeira_aula
+{
+	class Arrays
 	{
-		class Arrays
-			{
         static void Exercise1()
-            {
-               const int arraysLenght = 15;
+        {
+            const int arraysLenght = 15;
             
             var a = new double[arraysLenght];
             var b = new double[arraysLenght];

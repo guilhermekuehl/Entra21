@@ -17,7 +17,7 @@ namespace primeira_aula
             for (int i = 0; i < arraysLength; i++)
             {
                 try{
-                array1[i] = Int32.Parse(Console.ReadLine());
+                    array1[i] = Int32.Parse(Console.ReadLine());
                 }
                 catch(System.Exception){
                     System.Console.WriteLine("Não é possível inserir um valor deste tipo");
@@ -28,7 +28,7 @@ namespace primeira_aula
             for (int i = 0; i < arraysLength; i++)
             {
                 try{
-                array2[i] = Int32.Parse(Console.ReadLine());
+                    array2[i] = Int32.Parse(Console.ReadLine());
                 }
                 catch(System.Exception){
                     System.Console.WriteLine("Não é possível inserir um valor deste tipo");
