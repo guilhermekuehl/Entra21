@@ -4,93 +4,99 @@ namespace primeira_aula
 	{
 		class Program
 			{
-			static void Exercise1()
-		{
-			Console.WriteLine("crescente");
-            
-            for (int counter = 1; counter < 11; counter++)
+		static void Exercise1()
+		 {
+		    Console.WriteLine("crescente");
+
+            for (int i = 1; i < 11; i++)
             {
-				Console.WriteLine(counter);
+			    Console.WriteLine(i);
             }
 
 			System.Console.WriteLine("decrescente");
 
-            for (int counter = 10; counter > 0; counter--)
+            for (int i = 10; i > 0; i--)
             {
-				System.Console.WriteLine(counter);   
+				System.Console.WriteLine(i);   
             }
 
 			System.Console.WriteLine("apenas os pares");
 
-            for (int counter = 2; counter < 11; counter += 2)
+            for (int i = 2; i < 11; i += 2)
             {
-                System.Console.WriteLine(counter);
+                System.Console.WriteLine(i);
             }
 		}
 
 		static void Exercise2()
 		{
-			var sum = 0;
+			var soma = 0;
 
-            for (int counter = 1; counter < 101; counter++)
+            for (int i = 1; i <= 100; i++)
             {
-				sum += counter;
+				soma += i;
             }
 
-			System.Console.WriteLine("a soma dos números inteiros entre 1 e 100 é");
-			System.Console.WriteLine(sum);
+			System.Console.WriteLine($"A soma dos números inteiros entre 1 e 100 é {soma}");
 		}
 
 		static void Exercise3()
 		{
-            for (int counter = 1; counter < 200; counter += 2)
+            for (int i = 1; i < 200; i += 2)
             {
-				System.Console.WriteLine(counter);
+				System.Console.WriteLine(i);
             }
 		}
 
 		static void Exercise4()
 		{
-			var sum = 0.0;
+			var soma = 0;
+            var idade = 0;
+            var counter = 0;
 
-            for (int counter = 0; true; counter++)
+            for (int i = 0; true; i++)
             {
-                System.Console.WriteLine("Digite uma idade");
-				var result = Console.ReadLine();
-
-				if (result == "0")
-				{
-                    var average = (sum / counter).ToString("0.00");
-			        System.Console.WriteLine($"A média da turma é: {average}");
-					break;
-				}
-				
-				sum += Int32.Parse(result);
+                System.Console.WriteLine("Digite sua idade (digite 0 se quiser parar)");
+                idade = Int32.Parse(Console.ReadLine());
+                soma += idade;
+                if (idade == 0)
+                {
+                    break;
+                }
+                counter++;
             }
+            System.Console.WriteLine($"Média: {soma / counter}");
 		}
 
 		static void Exercise5()
 		{
+            var arraysLength = 5;
 			var womenBetween18And35 = 0;
-
-            for (int counter = 0; counter < 5; counter++)
+            var women = new int[arraysLength];
+            var i = 0;
+            
+            System.Console.WriteLine("Insira sua idade: ");
+            for (i = 0; i < arraysLength; i++)
             {
-				System.Console.WriteLine("Qual é o seu nome?");
-				Console.ReadLine();
-
-				System.Console.WriteLine("Qual é a sua idade?");
-				var age = Int32.Parse(Console.ReadLine());
-
-				if (age > 17 && age < 36)
-				{
-					womenBetween18And35++;
-				}
+                while (true)
+                {
+                    try
+                    {
+                        women[i] = Int32.Parse(Console.ReadLine());
+                        break;
+                    }
+                    catch (System.Exception)
+                    {
+                        System.Console.WriteLine("Digite apenas números: ");
+                    }
+                }
+                if (women[i] > 18 && women[i] < 35)
+                {
+                    womenBetween18And35++;
+                }
             }
+            System.Console.WriteLine($"{womenBetween18And35 * (100 / arraysLength)}%");
 
-			System.Console.WriteLine("Porcentagem de mulheres que tem entre 18 e 35 anos");
-
-			var percentage = (womenBetween18And35 * 100) / 5;
-			System.Console.WriteLine($"{percentage}%");
 		}
 
 		static void Exercise6()
@@ -160,26 +166,85 @@ namespace primeira_aula
 			}
 		}
 
-		static void Exercise9()
-		{
-            Console.WriteLine("Forneça um número");
-            var firstNumber = Double.Parse(Console.ReadLine());
+        static void Exercise7()
+        {
+            System.Console.WriteLine("Há quantos anos você fuma? ");
+            var years = Int32.Parse(Console.ReadLine());
+            System.Console.WriteLine("Quantos cigarros você fuma por dia? ");
+            var cigarettes = Int32.Parse(Console.ReadLine());
+            System.Console.WriteLine("Qual o preço de uma carteira? ");
+            var price = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Forneça um número");
-            var secondNumber = Double.Parse(Console.ReadLine());
+            System.Console.WriteLine($"Você ja gastou {(cigarettes * price / 20) * 30 * 12 * years}R$");
+        }
 
-            Console.WriteLine("Forneça um número");
-            var thirdNumber = Double.Parse(Console.ReadLine());
+        static void Exercise8()
+        {
+            var x = 0;
+            var y = 0;
 
-            if (firstNumber > (secondNumber + thirdNumber))
+            System.Console.WriteLine("Digite o número x: ");
+            x = Int32.Parse(Console.ReadLine());
+            System.Console.WriteLine("Digite o número y: ");
+            y = Int32.Parse(Console.ReadLine());
+
+            if (x %y == 0)
             {
-                Console.WriteLine("O primeiro número é maior que a soma dos demais");
+                System.Console.WriteLine("X é múltiplo de Y");
             }
             else
             {
-                Console.WriteLine("O primeiro número NAO é maior que a soma dos demais");
+                System.Console.WriteLine("X não é múltiplo de Y");
+            }
+        }
+ 
+    	static void Exercise9()
+		{
+            var number1 = 0.0;
+            var number2 = 0.0;
+            var number3 = 0.0;
+
+            System.Console.WriteLine("Digite um número: ");
+            number1 = double.Parse(Console.ReadLine());
+            System.Console.WriteLine("Digite um número: ");
+            number2 = double.Parse(Console.ReadLine());
+            System.Console.WriteLine("Digite um número: ");
+            number3 = double.Parse(Console.ReadLine());
+
+            if (number1 > number2 + number3)
+            {
+                System.Console.WriteLine("O primeiro número é maior que a soma dos outros dois");
+            }
+            
+            else
+            {
+                System.Console.WriteLine("A soma dos dois últimos números é maior que o primeiro");
             }
 		}
+
+        static void Exercise10()
+        {
+            var a = 0.0;
+            var b = 0.0;
+
+            System.Console.WriteLine("Digite o número a: ");
+            a = double.Parse(Console.ReadLine());
+            System.Console.WriteLine("Digite o número b: ");
+            b = double.Parse(Console.ReadLine());
+
+            if (a > b)
+            {
+                System.Console.WriteLine("A > B");
+            }
+            else if (b > a)
+            {
+                System.Console.WriteLine("B > A");
+            }
+            else
+            {
+                System.Console.WriteLine("A = B");
+            }
+        }
 
 		static void Exercise11()
 		{
@@ -216,7 +281,7 @@ namespace primeira_aula
 		{
             var biggestNumber = 0;
 
-            for (int counter = 0; counter < 10; counter++)
+            for (int i = 0; i < 10; i++)
             {
                 System.Console.WriteLine("Forneça um número");
                 var input = Int32.Parse(Console.ReadLine());
@@ -302,5 +367,10 @@ namespace primeira_aula
                 System.Console.WriteLine($"R$ {price.ToString("0.00")}");
             }
 		}
-	}
+	
+        static void Main(string[] args)
+        {
+            Exercise8();
+        }
+    }
 }

@@ -322,7 +322,7 @@ namespace primeira_aula
             System.Console.WriteLine("Resultado: ");
             System.Console.WriteLine(string.Join(",", arrayOfLettersInIndex));
         }
-        static void Main(string[] args)
+        static void off(string[] args)
         {
             Exercise9();
         }
